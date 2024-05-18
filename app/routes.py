@@ -1,9 +1,9 @@
 from flask import Blueprint, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 import os
+import requests
 
 main = Blueprint('main', __name__)
-
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
