@@ -8,7 +8,7 @@ import base64
 main = Blueprint('main', __name__)
 
 # Input the API Key here
-api_key = '';
+api_key = os.environ.get('OPENAI_API_KEY')
 
 
 @main.route('/')
