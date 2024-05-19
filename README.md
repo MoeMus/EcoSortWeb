@@ -3,6 +3,8 @@ EcoSort - The easy solution to sort your waste
 
 Upload an image of any waste to the website, and it will return information about where to dispose of it, i.e, which bin to put it
 
+You need to input your OpenAI API key as the 'api_key' variable in routes.py, as well as setting it as an environment variable using "export OPENAI_API_KEY=VALUE" in the terminal
+
 
 To start the project, make sure that you have the Python libraries flask (3.0.3), werkzeug (3.0.3), tensorflow (2.16.1), requests (2.31.0), openai (1.30.1) installed
 
