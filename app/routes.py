@@ -2,7 +2,7 @@ from flask import Blueprint, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 import os
 import requests
-from openai import OpenAI
+from openai import OpenAI 
 
 
 main = Blueprint('main', __name__)

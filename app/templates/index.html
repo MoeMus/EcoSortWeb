@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoSort</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+    <link rel="stylesheet" href="../static/styles.css">
     <script src="../scripts/scripts.js" defer></script>
 </head>
 <body>
@@ -12,9 +13,12 @@
 
     <form id="imageUploader" enctype="multipart/form-data">
 
-        <input type="file" id="select" name="file">
-        <label for="select" class="file-input-label">Choose Image</label>
-        <span id="file-name" class="file-name">No Image chosen</span>
+        <div class="submissionForm">
+            <input type="file" id="select" name="file">
+            <label for="select" class="file-input-label">Choose Image</label>
+            <span id="file-name" class="file-name">No Image chosen</span>
+        </div>
+       
         <input type="submit" id="submit" value="Upload Image">   
         <label for="submit" class="file-submit-label">Submit Image</label>
  
