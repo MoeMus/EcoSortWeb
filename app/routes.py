@@ -7,9 +7,8 @@ import base64
 
 main = Blueprint('main', __name__)
 
-# Input API Key here
+# Input the API Key here
 api_key = ''
-
 
 
 @main.route('/')
