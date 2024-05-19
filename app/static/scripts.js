@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function(){
         reader.onload = function(e) {
             var image = document.createElement("img");
             image.src = e.target.result;
+            image.style.width = "100%";
+            image.style.height = "100%";
             image.style.objectFit ='contain';
             image.style.overflow = 'hidden';
             label.appendChild(image);
@@ -73,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function(){
             classification.innerText = "Classification:";
             classification.style.fontFamily = '"Lucida Console", "Courier New", monospace';
             classification.style.textAlign = 'center';
-            classification.style.fontSize = '40px';
+            classification.style.fontSize = '30px';
             classification.style.color = 'green';
             imageFeedbackBlock.appendChild(classification);
 
@@ -91,7 +93,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 responseTitle.innerHTML = "Which container it goes into:";
                 responseTitle.style.fontFamily = '"Lucida Console", "Courier New", monospace';
                 responseTitle.style.textAlign = 'center';
-                responseTitle.style.color = 'green'
+                responseTitle.style.fontSize = '30';
+                responseTitle.style.color = 'green';
                 responseTitle.style.fontWeight = 'bold';
                 chatResponseElement.innerText = data.chat_response;
                 chatResponseElement.style.fontFamily = '"Lucida Console", "Courier New", monospace';

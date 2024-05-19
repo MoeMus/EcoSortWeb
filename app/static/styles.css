@@ -72,8 +72,8 @@ input[type="file"] {
 }
 
 .file-input-label{
-    width: 900px;
-    height: 400px;
+    width: 450px;
+    height: 200px;
     font-size: large;
 }
 
@@ -90,8 +90,16 @@ input[type="submit"] {
     margin: 10px;
 }
 
+.introSentence {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 #imageUploader{
-    margin-bottom: 50px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 .infoForm{
@@ -103,7 +111,7 @@ input[type="submit"] {
 .container {
     display: grid;
     place-items: center; /* Center both horizontally and vertically */
-    height: 50vh; /* Full viewport height */
+    height: 20vh; /* Full viewport height */
 }
 .infoForm {
     padding: 20px; /* Optional: padding around content */
