@@ -5,14 +5,15 @@ import requests
 import openai
 import base64
 
-
 main = Blueprint('main', __name__)
 
 api_key = os.environ.get("OPENAI_API_KEY")
 
+
 @main.route('/')
 def startSite():
     return render_template('index.html')
+
 
 @main.route('/send', methods=['GET', 'POST'])
 def index():
@@ -95,7 +96,7 @@ def get_chat_response(classification):
     )
     return response.choices[0].message.content
 
-@main.route('/error', methods = ['GET'])
-def sendErrorPage():
-    return render_template("error.html")
 
+@main.route('/error', methods=['GET'])
+def send_error_page():
+    return render_template("error.html")
