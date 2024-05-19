@@ -95,3 +95,7 @@ def get_chat_response(classification):
     )
     return response.choices[0].message.content
 
+@main.route('/error', methods = ['GET'])
+def sendErrorPage():
+    return render_template("error.html")
+
