@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function(){
         reader.onload = function(e) {
             var image = document.createElement("img");
             image.src = e.target.result;
-            image.style.width = '600px';
-            image.style.height = 'auto';
-            image.style.border = '2px solid black';
+            image.style.objectFit ='contain';
+            image.style.overflow = 'hidden';
             label.appendChild(image);
+            //label.style.objectFit ='contain';
         };
 
         reader.readAsDataURL(file);

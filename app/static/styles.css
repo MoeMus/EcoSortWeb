@@ -38,11 +38,16 @@ input[type="file"] {
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Lucida Console", "Courier New", monospace;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+
+.file-input-label{
+    width: 100%;
+    height: 100%;
 }
 
 .file-input-label{
