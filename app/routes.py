@@ -7,7 +7,7 @@ import base64
 
 main = Blueprint('main', __name__)
 
-api_key = 'sk-proj-iDhQLRqh3gAIHNUCbvZ1T3BlbkFJltPnBcND9JukL7mcF5fw'
+api_key = 'sk-proj-SvPied4FFatoz8doYurrT3BlbkFJOi8X7ZOIxE8abofis3Tm'
 
 
 
