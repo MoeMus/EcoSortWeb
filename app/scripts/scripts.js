@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
         };
 
         reader.readAsDataURL(file);
-        
+
     });
      // Handle the form submission
      form.addEventListener('submit', function(event) {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const formData = new FormData(form);
         
         // Send the POST request
-        fetch('/upload', { // Change '/upload' to your server endpoint
+        fetch('/', { // Change '/upload' to your server endpoint
             method: 'POST',
             body: formData
         })
