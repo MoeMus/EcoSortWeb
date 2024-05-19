@@ -98,6 +98,6 @@ def get_chat_response(classification):
     return response.choices[0].message.content
 
 
-@main.route('/error', methods=['GET'])
+@main.route('/error')
 def send_error_page():
     return render_template("error.html")

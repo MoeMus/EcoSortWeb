@@ -9,31 +9,34 @@
     <script src="../static/scripts.js" defer></script>
 </head>
 <body>
-    <h1 id="titlePage"> <span style="color: green;">Eco</span>Sort</h1>
+    <h1 id="titlePage"> <span style="color: green;">Eco</span><span style="color: rgb(71, 71, 223);">Sort</span></h1>
 
     <form id="imageUploader" enctype="multipart/form-data">
 
         <div class="submissionForm">
             <input type="file" id="select" name="file">
-            <label for="select" class="file-input-label">Choose Image</label>
-            <span id="file-name" class="file-name">No Image chosen</span>
+            <label for="select" class="file-input-label">Upload an Image</label>
+            <span id="file-name" class="file-name">No image chosen</span>
         </div>
 
         <input type="submit" id="submit" value="Upload Image">
-        <label for="submit" class="file-submit-label">Submit Image</label>
+        <label for="submit" class="file-submit-label" disabled="true">Upload an image before submitting</label>
 
     </form>
 
+    <div class="errorReport"> </div>
 
-    <div class="result">
+    <div class="container">
+        <div class="infoForm">
+            <div class="result">
+                <pre class="classify"></pre>
+            </div>
 
-        <pre class="classify"></pre>
-
-    </div>
-
-    <div class="chat-response">
-        <h2>ChatGPT Response</h2>
-        <pre id="chat-response-content"></pre>
+            <div class="chat-response">
+                <h2 id="responseHeader"> </h2>
+                <pre id="chat-response-content"> </pre>
+            </div>
+        </div>
     </div>
     
 </body>

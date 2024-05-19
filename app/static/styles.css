@@ -14,8 +14,8 @@ form {
     justify-content: space-around;
 }
 
-#titlepage{
-    font-size: large;
+#titlePage{
+    font-size: 70px;
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
@@ -48,6 +48,7 @@ input[type="file"] {
 .file-input-label{
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 .file-input-label{
@@ -67,4 +68,23 @@ input[type="submit"] {
     color: #333;
     display: block;
     margin: 10px;
+}
+
+#imageUploader{
+    margin-bottom: 50px;
+}
+
+.infoForm{
+    display: inline-block;
+    width: 900px;
+    height: 400px;
+}
+
+.container {
+    display: grid;
+    place-items: center; /* Center both horizontally and vertically */
+    height: 50vh; /* Full viewport height */
+}
+.infoForm {
+    padding: 20px; /* Optional: padding around content */
 }
