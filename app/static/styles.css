@@ -6,6 +6,25 @@ h1 {
     text-align: center;
 }
 
+header{
+    background-color: #aaa9a9;
+    height: 30px;
+    width: auto;
+    margin: 0;
+}
+
+#githubLogo{
+    width: 30px;
+    height: auto;
+}
+
+.link{
+    display: flex;
+    justify-content:flex-end;
+    flex-direction: row;
+    margin: 5px;
+}
+
 form {
     display: flex;
     flex-direction: column;
