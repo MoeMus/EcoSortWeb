@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function(){
     fileInput.addEventListener('change', function() {
         var file = this.files[0];
         var fileName = file.name;
-        fileNameSpan.innerText = fileName;
         submitButton.disabled = false;
-        submitButton.innerHTML = "Upload image";
+        submitButton.innerHTML = "Upload Image";
+        fileNameSpan.innerText = fileName;
         var label = document.getElementsByClassName("file-input-label")[0];
 
         // Remove existing images if any
@@ -64,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 console.error("Result block not found");
                 return;
             }
-            submitButton.disabled = false;
             // Clear previous results
             imageFeedbackBlock.innerHTML = '';
-
+            imageFeedbackBlock.style.color = 'black';
             let infoBlock = document.getElementsByClassName('infoForm');
             // Display classification
             let classification = document.createElement("h2");
@@ -107,7 +106,8 @@ document.addEventListener('DOMContentLoaded', function(){
             let imageFeedbackBlock = document.getElementsByClassName("result")[0];
             if (imageFeedbackBlock) {
                 imageFeedbackBlock.innerText = error;
-                imageFeedbackBlock.style.fon;
+                imageFeedbackBlock.style.fontFamily = '"Lucida Console", "Courier New", monospace';
+                imageFeedbackBlock.style.color = 'red';
             }
         });
     });

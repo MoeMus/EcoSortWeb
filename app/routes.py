@@ -61,7 +61,7 @@ def classify_image(image_path):
                 "content": [
                     {
                         "type": "text",
-                        "text": "What’s in this image?"
+                        "text": "What’s in this image and which trash container does this go into? If the image is not something you can throw away, say it so"
                     },
                     {
                         "type": "image_url",
@@ -90,7 +90,9 @@ def get_chat_response(classification):
             {"role": "system", "content": "You are EcoSort, an intelligent waste sorting machine. "
                                           "You classify waste as either garbage, recycle, compost, or cardboard bins."
                                           " Your response will be formatted simply as 'This item goes into the"
-                                          " (landfill bin/recycle bin/compost bin/mixed papers bin).'"},
+                                          " (landfill bin/recycle bin/compost bin/mixed papers bin).'"
+                                          " If the image cannot logically or reasonably be thrown away in any of these,"
+                                          " Say the image is not applicable."},
             {"role": "user", "content":
                 f"Please provide information about the following waste classification: {classification}"}
         ]

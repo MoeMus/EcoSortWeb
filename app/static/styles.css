@@ -17,6 +17,7 @@ form {
 #titlePage{
     font-size: 70px;
     font-family: "Lucida Console", "Courier New", monospace;
+    text-shadow: 1px 1px 1px rgb(59, 58, 58);
 }
 
 /* Hide the default file input */
@@ -38,11 +39,11 @@ input[type="file"] {
     box-sizing: border-box;
     text-decoration: none;
     font-family: "Lucida Console", "Courier New", monospace;
-    
+    border: 3px solid black;
+    box-shadow: 3px 3px 1px black;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .file-input-label{
