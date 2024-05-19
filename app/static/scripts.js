@@ -4,7 +4,6 @@ let gptFeedback = {
     chat_response: ""
 }
 
-
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('imageUploader');
     const fileInput = document.getElementById('select');
@@ -33,39 +32,64 @@ document.addEventListener('DOMContentLoaded', function(){
         };
 
         reader.readAsDataURL(file);
-
     });
-     // Handle the form submission
-     form.addEventListener('submit', function(event) {
+
+    // Handle the form submission
+    form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
 
         const formData = new FormData();
         const file = event.target[0].files[0];
-        //debugger;
         formData.append('file', file);
-        //const formData = new FormData(form);
-        
+
         // Send the POST request
-        fetch('/send', { 
+        fetch('/send', {
             method: "POST",
             body: formData
         })
-        .then(response => {if(response.ok){
-            response.json();
-            let imageFeedbackBlock = document.getElementsByClassName("result");
-            let feedback = Object.assign(new gptFeedback(), response);
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+        })
+        .then(data => {
+            let imageFeedbackBlock = document.getElementsByClassName("result")[0];
+            if (!imageFeedbackBlock) {
+                console.error("Result block not found");
+                return;
+            }
+
+            // Clear previous results
+            imageFeedbackBlock.innerHTML = '';
+
+            // Display classification
             let classification = document.createElement("h2");
             classification.innerText = "Classification:";
             classification.style.fontFamily = '"Lucida Console", "Courier New", monospace';
-            classification.style.textAlign ='center';
+            classification.style.textAlign = 'center';
             classification.style.fontSize = '40px';
             imageFeedbackBlock.appendChild(classification);
-            imageFeedbackBlock.innerText = feedback.classification;
-        }})
-        .catch(error=>{
-            console.error("invalid image");
-        });
-        
-    });
 
+            let classificationText = document.createElement("p");
+            classificationText.innerText = data.classification;
+            imageFeedbackBlock.appendChild(classificationText);
+
+            // Display chat response
+            let chatResponseElement = document.getElementById('chat-response-content');
+            if (chatResponseElement) {
+                chatResponseElement.innerText = data.chat_response;
+            } else {
+                console.error("Chat response element not found");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            let imageFeedbackBlock = document.getElementsByClassName("result")[0];
+            if (imageFeedbackBlock) {
+                imageFeedbackBlock.innerText = 'Error: ' + error;
+            }
+        });
+    });
 });
