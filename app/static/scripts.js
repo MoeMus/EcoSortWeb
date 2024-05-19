@@ -1,3 +1,10 @@
+let gptFeedback = {
+    status: "",
+    classification: "",
+    chat_response: ""
+}
+
+
 document.addEventListener('DOMContentLoaded', function(){
     const form = document.getElementById('imageUploader');
     const fileInput = document.getElementById('select');
@@ -35,19 +42,26 @@ document.addEventListener('DOMContentLoaded', function(){
         const formData = new FormData(form);
         
         // Send the POST request
-        fetch('/', { // Change '/upload' to your server endpoint
+        fetch('/send', { // Change '/upload' to your server endpoint
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            // Handle success, maybe show a success message
-            console.log('Success:', data);
-        })
-        .catch(error => {
-            // Handle error, maybe show an error message
-            console.error('Error:', error);
+        .then(response => {if(response.ok){
+            response.json();
+            let imageFeedbackBlock = document.getElementsByClassName("result");
+            let feedback = Object.assign(new gptFeedback(), response);
+            let classification = document.createElement("h2");
+            classification.innerText = "Classification:";
+            classification.style.fontFamily = '"Lucida Console", "Courier New", monospace';
+            classification.style.textAlign ='center';
+            classification.style.fontSize = '40px';
+            imageFeedbackBlock.appendChild(classification);
+            imageFeedbackBlock.innerText = feedback.classification;
+        }})
+        .catch(error=>{
+            console.error("invalid image");
         });
+        
     });
 
 });

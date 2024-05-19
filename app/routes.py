@@ -10,8 +10,11 @@ main = Blueprint('main', __name__)
 
 api_key = os.environ.get("OPENAI_API_KEY")
 
+@main.route('/')
+def startSite():
+    return render_template('index.html')
 
-@main.route('/', methods=['GET', 'POST'])
+@main.route('/send', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         if 'file' not in request.files:

@@ -6,9 +6,7 @@
     <title>EcoSort</title>
     <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
     <link rel="stylesheet" href="../static/styles.css">
-    <script src="../scripts/scripts.js" defer></script>
-    <!--<link rel="stylesheet" href="{{ url_for('scripts', filename='scripts.js') }}">-->
-
+    <script src="../static/scripts.js" defer></script>
 </head>
 <body>
     <h1 id="titlePage"> <span style="color: green;">Eco</span>Sort</h1>
@@ -20,13 +18,25 @@
             <label for="select" class="file-input-label">Choose Image</label>
             <span id="file-name" class="file-name">No Image chosen</span>
         </div>
-       
-        <input type="submit" id="submit" value="Upload Image">   
+
+        <input type="submit" id="submit" value="Upload Image">
         <label for="submit" class="file-submit-label">Submit Image</label>
- 
+
     </form>
 
-    <div id="feedback">  </div>
 
+    <div class="result">
+
+        <pre class="classify"></pre>
+
+    </div>
+
+    <div class="chat-response">
+
+        <h2>ChatGPT Response</h2>
+        <pre>{{ chat_response }}</pre>
+
+    </div>
+    
 </body>
 </html>
