@@ -39,7 +39,11 @@ document.addEventListener('DOMContentLoaded', function(){
      form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
 
-        const formData = new FormData(form);
+        const formData = new FormData();
+        const file = event.target[0].files[0];
+        //debugger;
+        formData.append('file', file);
+        //const formData = new FormData(form);
         
         // Send the POST request
         fetch('/send', { 
