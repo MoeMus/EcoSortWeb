@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function(){
         const formData = new FormData(form);
         
         // Send the POST request
-        fetch('/send', { // Change '/upload' to your server endpoint
-            method: 'POST',
+        fetch('/send', { 
+            method: "POST",
             body: formData
         })
         .then(response => {if(response.ok){
